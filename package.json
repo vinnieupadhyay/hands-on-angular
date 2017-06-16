@@ -1,0 +1,14 @@
+{
+  "name": "hands-on-angular",
+  "version": "1.0.0",
+  "description": "Creating and learning single page application using AngularJs",
+  "main": "/app/app.js",
+  "author": "Vineet Upadhyay",
+  "license": "MIT",
+  "dependencies": {
+    "angular": "^1.6.4"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}
