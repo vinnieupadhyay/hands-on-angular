@@ -15,7 +15,7 @@
     <select ng-model="selectedCitizen" ng-options="cit.citizen as cit.citizen for cit in artists | unique:'citizen'">
       <option value="">-- Select --</option>
     </select>
-    <ul>
+    <ul ng-show="searchArtist + selectedCitizen">
       <li ng-repeat = "item in artists | orderBy:'name' | filter:searchArtist | filter:selectedCitizen">
         <h3>{{item.name + ", " + item.artist}}</h3>
         <h4>{{item.citizen}}</h4>
