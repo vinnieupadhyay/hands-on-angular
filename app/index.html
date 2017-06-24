@@ -1,12 +1,15 @@
 <!DOCTYPE html>
-<html lang="en" ng-app>
+<html lang="en" ng-app='myApp'>
 <head>
   <meta charset="UTF-8">
   <title>AngularJs App</title>
   <script src="resources/js/angular.min.js"></script>
+  <script src="resources/js/controllers.js"></script>
 </head>
 <body>
-  <input type="text" ng-model="text">
-  <h1>Hello {{text}}</h1>
+  <div ng-controller = "myController">
+    <h1>{{ author.name }}</h1>
+    <p>{{author.title + ', ' + author.subject}}</p>
+  </div>
 </body>
 </html>
