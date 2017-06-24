@@ -1,11 +1,10 @@
 myApp = angular.module('myApp', []);
 
-myApp.controller('myController', function myController($scope) {
+myApp.controller('myController', function($scope, $http) {
 
-    $scope.author = {
-        'name'    : 'Vineet Upadhyay',
-        'title'   : 'Developer',
-        'subject' : 'AngularJs'
-    };
+    $http.get('resources/js/data.json').then(function(response) {
+        $scope.artists = response.data;
+        console.log($scope.artists);
+    });
 
 });

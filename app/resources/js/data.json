@@ -1,0 +1,42 @@
+[
+  {
+    "name":"Maria A'Becket",
+    "citizen":"American",
+    "artist":"Painter"
+  },
+  {
+    "name":"Hans von Aachen",
+    "citizen":"German",
+    "artist":"Painter"
+  },
+  {
+    "name":"Magdalena Abakanowicz",
+    "citizen":"Polish",
+    "artist":"Sculptor"
+  },
+  {
+    "name":"Masseot Abaquesne",
+    "citizen":"French",
+    "artist":"Potter"
+  },
+  {
+    "name":"Riza-i Abbasi",
+    "citizen":"Persian",
+    "artist":"Painter"
+  },
+  {
+    "name":"Louise Abbema",
+    "citizen":"French",
+    "artist":"Painter"
+  },
+  {
+    "name":"Edwin Austin Abbey",
+    "citizen":"American",
+    "artist":"Illustrator/Muralist"
+  },
+  {
+    "name":"Berenice Abbott",
+    "citizen":"American",
+    "artist":"Photographer"
+  }
+]

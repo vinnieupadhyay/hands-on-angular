@@ -8,8 +8,12 @@
 </head>
 <body>
   <div ng-controller = "myController">
-    <h1>{{ author.name }}</h1>
-    <p>{{author.title + ', ' + author.subject}}</p>
+    <ul>
+      <li ng-repeat = "item in artists">
+        <h3>{{item.name + ', ' + item.artist}}</h3>
+        <h4>{{item.citizen}}</h4>
+      </li>
+    </ul>
   </div>
 </body>
 </html>
