@@ -8,9 +8,10 @@
 </head>
 <body>
   <div ng-controller = "myController">
+    <span>Search artist: <input type="text" ng-model="searchArtist"</span>
     <ul>
-      <li ng-repeat = "item in artists">
-        <h3>{{item.name + ', ' + item.artist}}</h3>
+      <li ng-repeat = "item in artists | orderBy:'name' | filter:searchArtist">
+        <h3>{{item.name + ", " + item.artist}}</h3>
         <h4>{{item.citizen}}</h4>
       </li>
     </ul>
