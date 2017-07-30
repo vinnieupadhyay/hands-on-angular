@@ -1,0 +1,42 @@
+<section class="artistsPage">
+  <div class="listing">
+
+    <form class="filter cf">
+      <div class="search_artists cf">
+        <div class="search_keywords">
+          <label for="search_keywords">Keywords</label>
+          <input type="text" name="search_keywords" placeholder="Search for artists" ng-model="searchArtists">
+          <button ng-click="getArtists()">
+            Start Search
+          </button>
+        </div>
+        <div class="search_location">
+          <label for="search_location">Location</label>
+          <input type="text" name="search_location" placeholder="Location">
+        </div>
+      </div>
+      <ul class="types"></ul>
+    </form>
+
+    <ul class="artist_listing">
+      <li class="artist_list" ng-repeat='item in artistsData' ng-click='getArtistAlbum(item.id)'>
+        <a href="#/details/{{item.id}}">
+          <div class="col_1">
+            <img src="" class="artist_img" alt="">
+          </div>
+          <div class="col_2">
+            <div class="artist_name">
+              <h3>{{item.name}}</h3>
+            </div>
+          </div>
+          <div class="col_3">
+            <div class="artist_location">{{item.main_genre}}</div>
+          </div>
+          <div class="col_4">
+            <div class="artist_info">{{item.country_of_origin}}</div>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>

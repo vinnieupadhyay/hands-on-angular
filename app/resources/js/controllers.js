@@ -54,3 +54,43 @@ myApp.controller('myController', function($scope, $http) {
     });
 
 });
+
+myApp.controller('searchController', function($scope, $http) {
+
+    var API_KEY = 'api_key=d64ab48b95bac6e1c66d6510d74474e2&',
+        URL     = 'http://api.musicgraph.com/api/v2/',
+        ARTIST  = 'artist/',
+        ALBUM   = 'album',
+        SEARCH  = 'search?',
+        SUGGEST = 'suggest?',
+        NAME    = '&name=',
+        PREFIX  = '&prefix=',
+        LIMIT   = '&limit=1';
+
+    $scope.getArtists = function(){
+        $http.get(URL + ARTIST + SUGGEST + API_KEY + PREFIX + $scope.searchArtists).then(function(response) {
+            $scope.artists = response.data;
+            $scope.artistsData = [];
+            angular.forEach($scope.artists.data, function(name) {
+                $scope.artistsData.push(name);
+            });
+            console.log(response.data);
+        });
+    };
+
+    $scope.getArtistAlbum = function(id){
+        var ID= id + "/";
+        $http.get(URL + ARTIST + ID + 'albums?' + API_KEY ).then(function(response) {
+            $scope.albums = response.data;
+            // $scope.artistsData = [];
+            // angular.forEach($scope.artists.data, function(name) {
+            //     $scope.artistsData.push(name);
+            // });
+            console.log(response.data);
+        });
+    };
+
+
+
+
+});

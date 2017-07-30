@@ -1,0 +1,234 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+html {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+a img {
+  border: none;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+.cf:after {
+    clear: both;
+}
+html {
+  min-height: 100%;
+  height: auto;
+}
+body  {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  line-height: 160%;
+  *zoom: 1;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+  color: #475b62;
+}
+a {
+  color: #145266;
+}
+
+.wrapper {
+  width: 100%;
+}
+.container {
+  margin: 0 auto;
+  padding: 0;
+  width: 960px;
+  max-width: 100%;
+}
+.header {
+  margin: 0;
+  padding: 20px;
+  background: #0f0126;
+}
+.header .logo {
+  font-size: 2em;
+  color: #fff;
+  text-decoration: none;
+}
+.header .brand {
+  font-weight: bold;
+  color: #00a456;
+}
+div.listings {
+    border: 1px solid #dfdede;
+    border-radius: 4px 4px 0 0;
+    margin: 0;
+    background: #f7f7f7;
+    text-align: center;
+}
+.filters {
+    background: #eee;
+    zoom: 1;
+}
+.search_artists {
+    padding: 20px;
+    border-radius: 3px 3px 0 0;
+    background: #f7f7f7;
+    border-bottom: 1px solid #dfdede;
+}
+.search_artists .search_keywords,
+.search_artists .search_location {
+    width: 49.5%;
+    padding: 0;
+    float: left;
+    clear: inherit;
+    margin-left: 1%;
+}
+.search_artists>div:first-child {
+    margin-left: 0;
+}
+.search_artists div label {
+  display: none;
+}
+.search_artists input {
+  width: 100%;
+}
+
+textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+    padding: 10px 10px;
+    margin: 0 0 10px 0;
+    font-size: 15px;
+    line-height: 1.2em;
+    text-transform: none;
+    color: #323232;
+    font-weight: bold;
+    text-decoration: none;
+    position: relative;
+    height: 47px;
+    border-radius: 3px;
+    background: #fff;
+    box-shadow: none;
+    border: 1px solid #dadada!important;
+    transition: all 0.3s ease 0s;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+ul.artist_listing {
+    text-align: left;
+    background: #fff;
+    margin: 0;
+    border-bottom: 1px solid #dfdede;
+    border-top: 1px solid #dfdede;
+    border-radius: 0;
+}
+ul.artist_listing li.artist_list {
+    border: none;
+    padding: 0 20px;
+    border-top: 1px solid #dfdede;
+    transition: all 0.3s ease 0s;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+ul.artist_listing li.artist_list:first-child {
+    border: none;
+}
+ul.artist_listing li.artist_list a {
+    display: block;
+    /*padding: 1em 1em 1em 2em;*/
+    overflow: hidden;
+    zoom: 1;
+    position: relative;
+    line-height: 1.5em;
+    text-decoration: none;
+}
+ul.artist_listing li.artist_list>a>div {
+    float: none;
+    padding: 20px 0;
+    border-left: 1px solid #dfdede;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    display: table-cell;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+ul.artist_listing li.artist_list>a>div.col_1,
+ul.artist_listing li.artist_list>a>div.col_2 {
+    border-left: none;
+}
+ul.artist_listing li.artist_list>a>div.col_1 {
+    width: 9%;
+}
+ul.artist_listing li.artist_list>a>div.col_2 {
+    padding: 0;
+    width: 26%;
+}
+ul.artist_listing li.artist_list>a>div.col_3 {
+    text-align: center;
+    padding: 0;
+    width: 27%;
+}
+ul.artist_listing li.artist_list>a>div.col_4 {
+    width: 38%;
+    text-align: right;
+}
+ul.artist_listing li.artist_list>a .artist_img {
+    border-radius: 4px;
+    width: 80px;
+    height: 80px;
+    background: #f7f7f7;
+    border: 1px solid #dfdede;
+    position: relative;
+    margin: 0 auto 0 0;
+    left: 0;
+    float: none;
+    display: inline-block;
+    vertical-align: middle;
+    box-shadow: none;
+}

@@ -3,24 +3,42 @@
 <head>
   <meta charset="UTF-8">
   <title>AngularJs App</title>
+  <link rel="stylesheet" href="resources/css/style.css">
   <script src="resources/js/angular.min.js"></script>
+  <script src="resources/js/angular-route.min.js"></script>
   <script src="resources/js/controllers.js"></script>
 
 
 </head>
 <body>
-  <div ng-controller = "myController">
-    <span>Search artist: <input type="text" ng-model="searchArtist"</span>
-    <span>Search by citizen:</span>
-    <select ng-model="selectedCitizen" ng-options="cit.citizen as cit.citizen for cit in artists | unique:'citizen'">
-      <option value="">-- Select --</option>
-    </select>
-    <ul ng-show="searchArtist + selectedCitizen">
-      <li ng-repeat = "item in artists | orderBy:'name' | filter:searchArtist | filter:selectedCitizen">
-        <h3>{{item.name + ", " + item.artist}}</h3>
-        <h4>{{item.citizen}}</h4>
-      </li>
-    </ul>
-  </div>
+  <header class="header">
+    <nav class="container">
+      <a href="" class="logo"><span class="brand">artist</span>Finder</a>
+    </nav>
+  </header>
+  <section class="wrapper">
+    <div ng-view class="container">
+
+
+    </div>
+
+
+
+
+
+    <div>
+      <span>Search artist: <input type="text" ng-model="searchArtist"</span>
+      <span>Search by citizen:</span>
+      <select ng-model="selectedCitizen" ng-options="cit.citizen as cit.citizen for cit in artists | unique:'citizen'">
+        <option value="">-- Select --</option>
+      </select>
+      <ul>
+        <li ng-repeat = "item in artists | orderBy:'name' | filter:searchArtist | filter:selectedCitizen">
+          <h3>{{item.name + ", " + item.artist}}</h3>
+          <h4>{{item.citizen}}</h4>
+        </li>
+      </ul>
+    </div>
+  </section>
 </body>
 </html>
