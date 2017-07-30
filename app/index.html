@@ -5,7 +5,6 @@
   <title>AngularJs App</title>
   <link rel="stylesheet" href="resources/css/style.css">
   <script src="resources/js/angular.min.js"></script>
-  <script src="resources/js/angular-route.min.js"></script>
   <script src="resources/js/controllers.js"></script>
 
 
@@ -17,26 +16,61 @@
     </nav>
   </header>
   <section class="wrapper">
-    <div ng-view class="container">
+    <div ng-controller = "searchController" class="container">
 
+      <div class="listing">
 
-    </div>
+        <form class="filter cf">
+          <div class="search_artists cf">
+            <div class="search_keywords">
+              <label for="search_keywords">Keywords</label>
+              <input type="text" name="search_keywords" placeholder="Search for artists" ng-model="searchArtists">
+            </div>
+            <div class="search_button">
+              <button class="btn btn-default" ng-click="getArtists()">Search</button>
+            </div>
+          </div>
+          <ul class="types"></ul>
+        </form>
 
+        <ul class="artist_listing"  ng-show="!artistDetails">
+          <li class="artist_list" ng-repeat='item in artistsData' ng-click='getArtistAlbum(item.id)'>
+            <a href="">
+              <div class="col_1">
+                <img src="" class="artist_img" alt="">
+              </div>
+              <div class="col_2">
+                <div class="artist_name">
+                  <h3>{{item.name}}</h3>
+                </div>
+              </div>
+              <div class="col_3">
+                <div class="artist_location">{{item.main_genre}}</div>
+              </div>
+              <div class="col_4">
+                <div class="artist_info">{{item.country_of_origin}}</div>
+              </div>
+            </a>
+          </li>
+        </ul>
 
-
-
-
-    <div>
-      <span>Search artist: <input type="text" ng-model="searchArtist"</span>
-      <span>Search by citizen:</span>
-      <select ng-model="selectedCitizen" ng-options="cit.citizen as cit.citizen for cit in artists | unique:'citizen'">
-        <option value="">-- Select --</option>
-      </select>
-      <ul>
-        <li ng-repeat = "item in artists | orderBy:'name' | filter:searchArtist | filter:selectedCitizen">
-          <h3>{{item.name + ", " + item.artist}}</h3>
-          <h4>{{item.citizen}}</h4>
-        </li>
+        <ul class="artist_listing" ng-show="artistDetails">
+          <li class="artist_list" ng-repeat="album in artistsAlbumsData">
+            <a href="">
+              <div class="col_2">
+                <div class="artist_name">
+                  <h3>{{album.title}}</h3>
+                </div>
+              </div>
+              <div class="col_3">
+                <div class="artist_location">{{album.release_year}}</div>
+              </div>
+              <div class="col_4">
+                <div class="artist_info">{{album.number_of_tracks}}</div>
+              </div>
+            </a>
+          </li>
+        </div>
       </ul>
     </div>
   </section>

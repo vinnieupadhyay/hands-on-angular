@@ -67,30 +67,38 @@ myApp.controller('searchController', function($scope, $http) {
         PREFIX  = '&prefix=',
         LIMIT   = '&limit=1';
 
-    $scope.getArtists = function(){
-        $http.get(URL + ARTIST + SUGGEST + API_KEY + PREFIX + $scope.searchArtists).then(function(response) {
-            $scope.artists = response.data;
-            $scope.artistsData = [];
-            angular.forEach($scope.artists.data, function(name) {
-                $scope.artistsData.push(name);
-            });
-            console.log(response.data);
-        });
-    };
+    $scope.artistsList=false;
+    $scope.artistDetails=false;
 
+    //Search the artists
+    $scope.getArtists = function(){
+        if($scope.searchArtists) {
+            $http.get(URL + ARTIST + SUGGEST + API_KEY + PREFIX + $scope.searchArtists).then(function(response) {
+                $scope.artists = response.data;
+                $scope.artistsList=true;
+                $scope.artistDetails=false;
+                $scope.artistsData = [];
+                angular.forEach($scope.artists.data, function(name) {
+                    $scope.artistsData.push(name);
+                });
+                // console.log(response.data);
+            });
+        }
+    }
+
+    //Get artists albums details
     $scope.getArtistAlbum = function(id){
         var ID= id + "/";
         $http.get(URL + ARTIST + ID + 'albums?' + API_KEY ).then(function(response) {
-            $scope.albums = response.data;
-            // $scope.artistsData = [];
-            // angular.forEach($scope.artists.data, function(name) {
-            //     $scope.artistsData.push(name);
-            // });
-            console.log(response.data);
+            $scope.artistAlbums = response.data;
+            $scope.artistDetails=true;
+            $scope.artistsList=false;
+            $scope.artistsAlbumsData = [];
+            angular.forEach($scope.artistAlbums.data, function(name) {
+                $scope.artistsAlbumsData.push(name);
+            });
+            // console.log(response.data);
         });
-    };
-
-
-
+    }
 
 });

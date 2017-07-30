@@ -77,6 +77,30 @@ h1, h2, h3, h4, h5, h6 {
 a {
   color: #145266;
 }
+.btn {
+  display: inline-block;
+  padding: 6px 54px;
+  margin-bottom: 0;
+  height: 47px;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 1.2em;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 3px;
+}
+.btn-default{
+  color: #fff;
+  background-color: #00a456;
+  border: 1px solid #048145;
+}
+.btn-default:hover{
+  background-color: #059a53;
+}
 
 .wrapper {
   width: 100%;
@@ -120,11 +144,18 @@ div.listings {
 }
 .search_artists .search_keywords,
 .search_artists .search_location {
-    width: 49.5%;
+    width: 80%;
     padding: 0;
     float: left;
     clear: inherit;
     margin-left: 1%;
+}
+.search_artists .search_button {
+    width: 10%;
+    padding: 0;
+    float: left;
+    clear: inherit;
+    margin-left: 2%;
 }
 .search_artists>div:first-child {
     margin-left: 0;
